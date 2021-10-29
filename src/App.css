@@ -1,5 +1,6 @@
 #root {
   --primary-box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
+  --card-box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
   --border-white: rgb(232, 232, 232);
   --primary-bg: #f4f7fc;
   --primary-font: #1a1a1c;

@@ -1,0 +1,51 @@
+.prize-container {
+  display: flex;
+  justify-content: center;
+}
+
+.prize-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 16px;
+  height: 80px;
+  /* border: 1px solid #d7d7d7; */
+  background: var(--primary-white);
+  border-radius: 20px;
+  width: 900px;
+  margin-bottom: 16px;
+  box-shadow: var(--card-box-shadow);
+}
+
+.prize {
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+  background: var(--primary-white);
+  min-width: 300px;
+}
+
+.prize h1 {
+  font-size: 16px;
+  width: 150px;
+  background: var(--primary-white);
+}
+
+.prize-data {
+  display: flex;
+  text-align: right;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--primary-white);
+}
+
+.prize-price {
+  width: 110px;
+  background: var(--primary-white);
+}
+
+.prize-volume {
+  width: 155px;
+  background: var(--primary-white);
+}
