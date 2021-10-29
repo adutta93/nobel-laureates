@@ -17,6 +17,14 @@
   width: 900px;
   margin-bottom: 16px;
   box-shadow: var(--card-box-shadow);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.prize-row:hover,
+.prize-row:focus,
+.prize-row:active {
+  transform: translateY(-2px);
 }
 
 .prize {
@@ -41,12 +49,21 @@
   background: var(--primary-white);
 }
 
-.prize-price {
-  width: 110px;
+.prize-yr {
   background: var(--primary-white);
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.prize-volume {
-  width: 155px;
+.prize-laureate {
+  font-weight: 500;
   background: var(--primary-white);
+}
+.prize-laureate span {
+  font-size: 14px;
+  background: var(--primary-white);
+}
+.laureate-list {
+  display: flex;
+  flex-direction: column;
 }

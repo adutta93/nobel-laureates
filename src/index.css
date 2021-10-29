@@ -1,18 +1,6 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
-
 #root {
+  --color-btn: #624de3;
+  --shadow-btn: 0px 6px 12px rgba(98, 77, 227, 0.3);
   --primary-box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
   --card-box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.05);
   --border-white: rgb(232, 232, 232);

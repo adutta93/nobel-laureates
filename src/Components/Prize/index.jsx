@@ -17,16 +17,17 @@ const Prize = ({ year, category, laureates }) => {
         <div className="prize-row">
           <div className="prize">
             <h1>{category}</h1>
-            <p className="prize-symbol"></p>
           </div>
           <div className="prize-data">
-            <p className="prize-price">{year}</p>
+            <p className="prize-yr">{year}</p>
             {laureates &&
               laureates.map((laureate) => (
-                <p className="prize-volume">
-                  {laureate.firstname} <br />
-                  {laureate.surname}
-                </p>
+                <div className="laureate-list">
+                  <div className="prize-laureate">
+                    <span>{laureate.firstname}</span>{" "}
+                    <span>{laureate.surname}</span>
+                  </div>
+                </div>
               ))}
           </div>
         </div>

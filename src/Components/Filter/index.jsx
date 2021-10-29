@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Appearance from "../Appearance";
-
 import "./filter.css";
+
 const Filter = ({ prizes, setPrizes }) => {
   const [items, setItems] = useState("");
-  // console.log("Prizes from filter ==>", prizes);
-
+  //fiilter functions
   const filterItem = (itemCategory) => {
     const updatedFilterItems = prizes.filter((currentElem) => {
       return currentElem.category === itemCategory;
@@ -25,6 +24,7 @@ const Filter = ({ prizes, setPrizes }) => {
             filterItem(selectedItem);
           }}
         >
+          <option value="">Category</option>
           <option value="peace">Peace</option>
           <option value="chemistry">Chemistry</option>
           <option value="physics">Physics</option>
@@ -40,13 +40,11 @@ const Filter = ({ prizes, setPrizes }) => {
             filterItem("2002");
           }}
         >
+          <option value="">Year</option>
           {prizes.map((prize) => {
             return <option value={prize.year}>{prize.year}</option>;
           })}
         </select>
-      </div>
-      <div>
-        <Appearance prizes={prizes} />
       </div>
     </div>
   );
