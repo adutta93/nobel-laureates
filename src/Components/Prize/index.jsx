@@ -12,8 +12,8 @@ const Prize = ({ year, category, laureates }) => {
           <div className="prize-data">
             <p className="prize-yr">{year}</p>
             {laureates &&
-              laureates.map((laureate) => (
-                <div className="laureate-list">
+              laureates.map((laureate, index) => (
+                <div className="laureate-list" key={index}>
                   <div className="prize-laureate">
                     <span>{laureate.firstname}</span>{" "}
                     <span>{laureate.surname}</span>

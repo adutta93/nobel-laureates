@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Select from "react-select";
-import Appearance from "../Appearance";
+import React, { useState } from "react";
 import "./filter.css";
 
 const Filter = ({ prizes, setPrizes }) => {
-  const [items, setItems] = useState("");
+  const [setItems] = useState("");
   //fiilter functions
   const filterItem = (itemCategory) => {
     const updatedFilterItems = prizes.filter((currentElem) => {
@@ -12,7 +10,6 @@ const Filter = ({ prizes, setPrizes }) => {
     });
     setPrizes(updatedFilterItems);
   };
-  console.log("Prizes from filter", items);
   return (
     <div className="filter-container">
       <div className="select">
@@ -41,8 +38,12 @@ const Filter = ({ prizes, setPrizes }) => {
           }}
         >
           <option value="">Year</option>
-          {prizes.map((prize) => {
-            return <option value={prize.year}>{prize.year}</option>;
+          {prizes.map((prize, index) => {
+            return (
+              <option key={index} value={prize.year}>
+                {prize.year}
+              </option>
+            );
           })}
         </select>
       </div>

@@ -10,14 +10,15 @@ function App() {
   const [prizes, setPrizes] = useState([].slice(0, 10));
   const [pageNumber, setPageNumber] = useState(0);
 
+  //pagination
   const dataPerPage = 10;
   const pageVisited = pageNumber * dataPerPage;
-  // 40 -> 50
   const displayData = prizes
     .slice(pageVisited, pageVisited + dataPerPage)
-    .map((prize) => {
+    .map((prize, index) => {
       return (
         <Prize
+          key={index}
           year={prize.year}
           category={prize.category}
           laureates={prize.laureates}
@@ -26,11 +27,11 @@ function App() {
     });
 
   const pageCount = Math.ceil(prizes.length / dataPerPage);
-
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
+  // fetching data
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`http://api.nobelprize.org/v1/prize.json`);
@@ -44,16 +45,6 @@ function App() {
       <aside>
         <Filter prizes={prizes} setPrizes={setPrizes} />
       </aside>
-
-      {/* {prizes.map((prize) => {
-        return (
-          <Prize
-            year={prize.year}
-            category={prize.category}
-            laureates={prize.laureates}
-          />
-        );
-      })} */}
       {displayData}
       <ReactPaginate
         previousLabel={"Previous"}
