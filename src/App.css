@@ -16,3 +16,44 @@
   /* margin-top: 64px; */
   color: var(--primary-white);
 }
+
+.paginationBttns {
+  margin: 50px 0 50px 0;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  /* border: 1px solid #2b2eff; */
+  color: var(--color-btn);
+  cursor: pointer;
+  margin-left: 26px;
+  box-shadow: var(--card-box-shadow-pag);
+  transition: transform 200ms cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: var(--color-btn);
+}
+
+.paginationBttns a:hover,
+.paginationBttns a:focus,
+.paginationBttns a:active {
+  transform: translateY(-2px);
+}
+.paginationActive a {
+  color: white;
+  background-color: var(--color-btn);
+}
+
+.paginationDisabled a {
+  color: grey;
+  background-color: white;
+}

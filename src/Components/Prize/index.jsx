@@ -1,16 +1,7 @@
 import React from "react";
 import "./prize.css";
 
-let laureateId = [];
-
 const Prize = ({ year, category, laureates }) => {
-  // console.log(" laureates =>", laureates);
-  laureates &&
-    laureates.map((laureate) => {
-      laureateId.push(laureate.id);
-      return true;
-    });
-
   return (
     <>
       <div className="prize-container">

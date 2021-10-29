@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 import axios from "axios";
 import Prize from "./Components/Prize";
 import Filter from "./Components/Filter";
@@ -6,7 +7,29 @@ import Filter from "./Components/Filter";
 import "./App.css";
 
 function App() {
-  const [prizes, setPrizes] = useState([]);
+  const [prizes, setPrizes] = useState([].slice(0, 10));
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const dataPerPage = 10;
+  const pageVisited = pageNumber * dataPerPage;
+  // 40 -> 50
+  const displayData = prizes
+    .slice(pageVisited, pageVisited + dataPerPage)
+    .map((prize) => {
+      return (
+        <Prize
+          year={prize.year}
+          category={prize.category}
+          laureates={prize.laureates}
+        />
+      );
+    });
+
+  const pageCount = Math.ceil(prizes.length / dataPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -22,7 +45,7 @@ function App() {
         <Filter prizes={prizes} setPrizes={setPrizes} />
       </aside>
 
-      {prizes.map((prize) => {
+      {/* {prizes.map((prize) => {
         return (
           <Prize
             year={prize.year}
@@ -30,8 +53,19 @@ function App() {
             laureates={prize.laureates}
           />
         );
-      })}
-      {/*  */}
+      })} */}
+      {displayData}
+      <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      />
     </div>
   );
 }
