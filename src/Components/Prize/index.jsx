@@ -7,6 +7,7 @@ const Prize = ({ year, category, laureates }) => {
   laureates &&
     laureates.map((laureate) => {
       laureateId.push(laureate.id);
+      return true;
     });
   console.log(laureateId);
   return (

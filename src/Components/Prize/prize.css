@@ -1,12 +1,13 @@
 .prize-container {
   display: flex;
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
 .prize-row {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 16px;
   height: 80px;
