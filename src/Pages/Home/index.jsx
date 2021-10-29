@@ -15,7 +15,7 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  return <div className="coin-app"></div>;
+  return <div className="nobel-app"></div>;
 }
 
 export default App;
