@@ -27,7 +27,7 @@ const Appearance = ({ prizes }) => {
     };
     fetchItems();
   }, []);
-  return <div>Hello</div>;
+  return <div>{count}</div>;
 };
 
 export default Appearance;

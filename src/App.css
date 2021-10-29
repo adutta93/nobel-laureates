@@ -11,6 +11,7 @@
 .nobel-app {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   /* margin-top: 64px; */
   color: var(--primary-white);

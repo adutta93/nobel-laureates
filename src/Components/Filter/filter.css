@@ -1,0 +1,31 @@
+.filter-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+.select {
+  width: 300px;
+}
+
+.select-cat {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-white);
+  box-shadow: var(--card-box-shadow);
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.select-yr {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-white);
+  box-shadow: var(--card-box-shadow);
+  padding: 10px;
+  margin-top: 20px;
+}
